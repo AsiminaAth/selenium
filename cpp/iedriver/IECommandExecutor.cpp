@@ -97,6 +97,7 @@ LRESULT IECommandExecutor::OnCreate(UINT uMsg,
   this->use_strict_file_interactability_ = false;
   this->page_load_strategy_ = "normal";
   this->file_upload_dialog_timeout_ = DEFAULT_FILE_UPLOAD_DIALOG_TIMEOUT_IN_MILLISECONDS;
+  this->enable_full_page_screenshot_ = true;
 
   this->managed_elements_ = new ElementRepository();
   this->input_manager_ = new InputManager();

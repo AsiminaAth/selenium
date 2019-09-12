@@ -204,6 +204,13 @@ class IECommandExecutor : public CWindowImpl<IECommandExecutor>, public IElement
     this->use_strict_file_interactability_ = use_strict_file_interactability;
   }
 
+  bool enable_full_page_screenshot(void) const {
+    return this->enable_full_page_screenshot_;
+  }
+  void set_enable_full_page_screenshot(const bool enable_full_page_screenshot) {
+    this->enable_full_page_screenshot_ = enable_full_page_screenshot;
+  }
+
   ElementFinder* element_finder(void) const { return this->element_finder_; }
   InputManager* input_manager(void) const { return this->input_manager_; }
   ProxyManager* proxy_manager(void) const { return this->proxy_manager_; }

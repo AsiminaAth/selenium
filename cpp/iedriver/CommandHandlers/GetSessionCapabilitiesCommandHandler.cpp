@@ -55,6 +55,9 @@ void GetSessionCapabilitiesCommandHandler::ExecuteInternal(
   capabilities[ENSURE_CLEAN_SESSION_CAPABILITY] = executor.browser_factory()->clear_cache();
   capabilities[USE_PER_PROCESS_PROXY_CAPABILITY] = executor.proxy_manager()->use_per_process_proxy();
   capabilities[FILE_UPLOAD_DIALOG_TIMEOUT_CAPABILITY] = executor.file_upload_dialog_timeout();
+  capabilities[TAKES_SCREENSHOT_CAPABILITY] = true;
+  capabilities[ENABLE_FULL_PAGE_SCREENSHOT_CAPABILITY] = executor.enable_full_page_screenshot();
+
   response->SetSuccessResponse(capabilities);
 }
 
