@@ -196,9 +196,6 @@ Json::Value NewSessionCommandHandler::ProcessLegacyCapabilities(const IECommandE
   Json::Value page_load_strategy = this->GetCapability(capabilities, PAGE_LOAD_STRATEGY_CAPABILITY, Json::stringValue, NORMAL_PAGE_LOAD_STRATEGY);
   mutable_executor.set_page_load_strategy(this->GetPageLoadStrategyValue(page_load_strategy.asString()));
 
-  Json::Value resize_on_screenshot = this->GetCapability(capabilities, ENABLE_FULL_PAGE_SCREENSHOT_CAPABILITY, Json::booleanValue, true);
-  mutable_executor.set_enable_full_page_screenshot(resize_on_screenshot.asBool());
-
   Json::Value use_per_process_proxy_capability = this->GetCapability(capabilities, USE_PER_PROCESS_PROXY_CAPABILITY, Json::booleanValue, false);
   bool use_per_process_proxy = use_per_process_proxy_capability.asBool();
   Json::Value proxy = capabilities.get(PROXY_CAPABILITY, Json::nullValue);
@@ -457,6 +454,9 @@ void NewSessionCommandHandler::SetInputSettings(const IECommandExecutor& executo
   if (file_upload_dialog_timeout.asInt() > 0) {
     mutable_executor.set_file_upload_dialog_timeout(file_upload_dialog_timeout.asInt());
   }
+
+  Json::Value resize_on_screenshot = this->GetCapability(capabilities, ENABLE_FULL_PAGE_SCREENSHOT_CAPABILITY, Json::booleanValue, true);
+  mutable_executor.set_enable_full_page_screenshot(resize_on_screenshot.asBool());
 
   Json::Value use_strict_file_interactability = this->GetCapability(capabilities, STRICT_FILE_INTERACTABILITY_CAPABILITY, Json::booleanValue, false);
   mutable_executor.set_use_strict_file_interactability(use_strict_file_interactability.asBool());
