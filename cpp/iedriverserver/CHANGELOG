@@ -9,6 +9,15 @@ available via the project downloads page. Changes in "revision" field indicate
 private releases checked into the prebuilts directory of the source tree, but
 not made generally available on the downloads page.
 
+v3.142.0.0
+==========
+ * This version is built on top of v3.141.59. It re-enables full page screenshots.
+ * Full page screenshotting is enabled by default. It can be disabled with the 
+   "ie.enableFullPageScreenshot" capability, setting it to false. You can see an 
+   example of this in use here: 
+   https://gist.github.com/tourdedave/ed572f5db61551ce8a6662295b78b3bf
+ * Element screenshotting is disabled.
+
 v3.141.0.1
 ==========
  * Updated error message return from unserializable JavaScript results. In
